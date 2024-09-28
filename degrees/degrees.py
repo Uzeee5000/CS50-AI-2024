@@ -91,6 +91,9 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
+    #Checking if source and target are the same
+    if source==target:
+        return []
     #Number of Explored Paths
     num_explored=0
     
