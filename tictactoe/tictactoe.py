@@ -41,11 +41,11 @@ def actions(board):
     if terminal(board):
         return "Game Over" 
     
-    action=[]
-    for i in range(0,2):
-        for j in range(0,2):
+    action=set()
+    for i in range(0,3):
+        for j in range(0,3):
             if board[i][j] ==EMPTY:
-                action.append(i,j)
+                action.add((i,j))
     
     return action
 
@@ -54,6 +54,7 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+
     raise NotImplementedError
 
 
