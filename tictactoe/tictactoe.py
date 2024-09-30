@@ -22,14 +22,32 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    raise NotImplementedError
+    flattened_grid = [item for sublist in board for item in sublist]
+    x = flattened_grid.count('X')
+    o = flattened_grid.count('O')
+
+    if terminal(board):
+        return "Game Over"
+    elif x==o:
+        return X
+    else:
+        return O
 
 
 def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+    if terminal(board):
+        return "Game Over" 
+    
+    action=[]
+    for i in range(0,2):
+        for j in range(0,2):
+            if board[i][j] ==EMPTY:
+                action.append(i,j)
+    
+    return action
 
 
 def result(board, action):
@@ -50,6 +68,8 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
+
+
     raise NotImplementedError
 
 
