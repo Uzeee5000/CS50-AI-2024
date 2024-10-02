@@ -121,7 +121,7 @@ def terminal(board):
     Returns True if game is over, False otherwise.
     """
     for i in board:
-        for x in i:
+        for x in range(3):
             if i[x] not in [O,X]:
                 return False
     return True
