@@ -120,9 +120,11 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-
-
-    raise NotImplementedError
+    for i in board:
+        for x in i:
+            if i[x] not in [O,X]:
+                return False
+    return True
 
 
 def utility(board):
