@@ -158,9 +158,6 @@ def minimax(board):
             moves.append([max_value(result(board,action)),action])
         return sorted(moves,key=lambda x: x[0])[0][1]
          
-
-
-  
 def max_value(board):
 
     v= -math.inf
@@ -171,6 +168,7 @@ def max_value(board):
     for action in actions(board):
         v = max(v, min_value(result(board, action)))
     return v
+
 
 def min_value(board):
 
